@@ -12,12 +12,12 @@ class QuestionsController < ApplicationController
     p "@question :  #{@question}"
   end
 
-  # 質問の作成
+  # 質問の作成画面
   def new
     @question = Question.new
   end
 
-  # 質問の登録
+  # 質問の登録処理
   def create
     # Questionモデルを初期化
     @question = Question.new(question_params)
@@ -33,14 +33,19 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # 質問の編集
+  # 質問の編集画面
   def edit
-    
+    @question = Question.find(params[:id])
   end
 
-  #質問の更新
+  #質問の更新処理
   def update
-    
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render 'edit', status: :unprocessable_entity
+    end
   end
 
   # 質問の削除
