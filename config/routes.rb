@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "questions#index"
-  resources :questions
+  resources :questions do
+    resources :answers  # questionsルート（/questions/...）に紐づくanswersルートが作成される（/questions/:question_id/answers）。
+  end
 end
