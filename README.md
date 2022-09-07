@@ -8,7 +8,7 @@ An application with minimal Q&A functionality.
 
 ## Rails version
 
-7.0.0
+6.1.3.1
 
 # Start application
 
