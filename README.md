@@ -13,7 +13,7 @@ An application with minimal Q&A functionality.
 # Start application
 
 ```
-git@github.com:MasakiYamashita/qanda.git
+git clone git@github.com:MasakiYamashita/qanda.git
 cd <project home>
 rails server
 ```
